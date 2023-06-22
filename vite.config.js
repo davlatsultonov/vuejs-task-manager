@@ -6,6 +6,6 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 
   return {
     plugins: [vue()],
-    base: isProduction ? '/vue-task-manager/' : '',
+    base: isProduction ? '/vuejs-task-manager/' : '',
   }
 });

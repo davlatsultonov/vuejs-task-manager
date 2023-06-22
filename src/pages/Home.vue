@@ -38,5 +38,8 @@ export default defineComponent({
         <router-link to="/todos" class="btn btn-dark">Add todo</router-link>
       </div>
     </div>
+    <div class="mt-3 text-center"  v-if="todosCount">
+      <router-link to="/todos" class="btn btn-dark">Add todo</router-link>
+    </div>
   </TodosWrapper>
 </template>

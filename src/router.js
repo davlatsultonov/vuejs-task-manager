@@ -2,7 +2,7 @@ import Home from "./pages/Home.vue";
 import TodosPage from "./pages/TodosPage.vue";
 import { createRouter, createWebHistory } from 'vue-router'
 
-const prefix = import.meta.env.MODE === 'production' ? '/vue-task-manager' : ''
+const prefix = import.meta.env.MODE === 'production' ? '/vuejs-task-manager' : ''
 
 export const links = [
     { label: 'Главная', link: prefix + '/' },
