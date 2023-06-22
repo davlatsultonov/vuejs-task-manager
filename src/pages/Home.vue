@@ -3,6 +3,7 @@ import {defineComponent} from 'vue'
 import TodosList from "../components/Todos/TodosList.vue";
 import {mapGetters, mapMutations} from "vuex";
 import TodosWrapper from "../components/Todos/TodosWrapper.vue";
+import {ROUTE_PREFIX} from "../helpers.js";
 
 export default defineComponent({
   name: "Home",
@@ -14,7 +15,10 @@ export default defineComponent({
     ...mapGetters({
       filterState: "getFilterState",
       todosCount: "count"
-    })
+    }),
+    routePrefix() {
+      return ROUTE_PREFIX
+    }
   }
 })
 </script>
@@ -35,11 +39,11 @@ export default defineComponent({
       <div class="alert alert-info d-flex align-items-center justify-content-between w-50">
         No todos yet...
 
-        <router-link to="/todos" class="btn btn-dark">Add todo</router-link>
+        <router-link :to="`${routePrefix}/todos`" class="btn btn-dark">Add todo</router-link>
       </div>
     </div>
     <div class="mt-3 text-center"  v-if="todosCount">
-      <router-link to="/todos" class="btn btn-dark">Add todo</router-link>
+      <router-link :to="`${routePrefix}/todos`" class="btn btn-dark">Add todo</router-link>
     </div>
   </TodosWrapper>
 </template>

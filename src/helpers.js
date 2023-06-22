@@ -17,3 +17,5 @@ export function setTodosFromLocalStorage(todos) {
         setItemToLocalStorage('todos', todos)
     }
 }
+
+export const ROUTE_PREFIX = import.meta.env.MODE === 'production' ? '/vuejs-task-manager' : ''

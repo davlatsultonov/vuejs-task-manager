@@ -1,17 +1,17 @@
 import Home from "./pages/Home.vue";
 import TodosPage from "./pages/TodosPage.vue";
 import { createRouter, createWebHistory } from 'vue-router'
+import {ROUTE_PREFIX} from "./helpers.js";
 
-const prefix = import.meta.env.MODE === 'production' ? '/vuejs-task-manager' : ''
 
 export const links = [
-    { label: 'Главная', link: prefix + '/' },
-    { label: 'Задачи', link: prefix + '/todos' },
+    { label: 'Главная', link: ROUTE_PREFIX + '/' },
+    { label: 'Задачи', link: ROUTE_PREFIX + '/todos' },
 ];
 
 const routes = [
-    { path: prefix + '/', component: Home },
-    { path: prefix + '/todos', component: TodosPage },
+    { path: ROUTE_PREFIX + '/', component: Home },
+    { path: ROUTE_PREFIX + '/todos', component: TodosPage },
 ];
 
 const router = createRouter({
